@@ -4,11 +4,13 @@ import TextField from '@mui/material/TextField';
 // Next inbuilt Image
 import Image from 'next/image';
 import insta from '../../assets/insta.jpg';
-import { CarouselProvider, Slider, Slide, Image as Img } from 'pure-react-carousel';
+// import { CarouselProvider, Slider, Slide, Image as Img } from 'pure-react-carousel';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Carousel from "react-bootstrap/Carousel";
 import bg1 from '../../assets/bg1.jpg'
 import bg2 from '../../assets/bg2.jpg'
 import bg3 from '../../assets/bg3.jpg'
-import { Carousel } from 'react-responsive-carousel';
+// import { Carousel } from 'react-responsive-carousel';
 import { AuthContext } from '../../context/auth';
 import { useRouter } from 'next/router';
 function Index() {
@@ -52,18 +54,24 @@ function Index() {
         <div className="login-container">
             <div className="carbg">
                 <div className='car'>
-                    <Carousel showIndicators={false}
-                        showThumbs={false}
-                        showStatus={false}
-                        infiniteLoop={true}
-                        interval={2000}
-                        autoPlay={true}
-                        showArrows={false}
-                    >
-                        <Image src={bg1}></Image>
-                        <Image src={bg2}></Image>
-                        <Image src={bg3}></Image>
-                    </Carousel>
+                <Carousel
+            fade
+            nextLabel=""
+            prevLabel=""
+            controls={false}
+            indicators={false}
+            interval="3000"
+          >
+            <Carousel.Item>
+              <Image src={bg1} className="d-block w-100" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <Image src={bg2} className="d-block w-100" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <Image src={bg3} className="d-block w-100" />
+            </Carousel.Item>
+          </Carousel>
                 </div>
             </div>
             <div>

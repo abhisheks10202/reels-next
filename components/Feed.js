@@ -52,7 +52,9 @@ function Feed() {
             <div className="videos-container">
                 {
                     posts.map((post)=>(
+                        <div key={user.uid}>
                         <Post postData={post} userData={userData}/>
+                        </div>
                     ))
                 }
             </div>
